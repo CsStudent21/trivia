@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia!</title>
+
+        <script>
+
+            // TODO: Add code to check answers to questions
+            document.addEventListener("DOMContentLoaded", function(){
+                // The right answer
+                document.querySelector(".right").addEventListener("click",function(){
+                    let x = document.querySelector(".right");
+                    x.style.backgroundColor = "green";
+                    document.querySelector("#pizza").innerHTML = "Correct!";
+                });
+
+                // The wrong answers
+                let y = document.querySelectorAll(".wrong");
+                for(let i = 0; i < y.length; i++){
+                    y[i].addEventListener("click", function(){
+                        y[i].style.backgroundColor = "red";
+                        document.querySelector("#pizza").innerHTML = "Incorrect";
+                    });
+                };
+
+                
+            });
+        </script>
+
+    </head>
+    <body>
+
+        <div class="jumbotron">
+            <h1>Trivia!</h1>
+        </div>
+
+        <div class="container">
+
+            <div class="section">
+                <h2>Part 1: Multiple Choice </h2>
+                <hr>
+                <h3>Which is the capital of pizza?</h3>
+
+                <!-- TODO: Add multiple choice question here -->
+                <button class="wrong">
+                    Chicago
+                </button>
+                <button class="wrong">
+                    Rome
+                </button>
+                <button class="wrong">
+                    New York
+                </button>
+                <button class="right">
+                    Naples
+                </button>
+                <button class="wrong">
+                    Beijing
+                </button>
+                <p id="pizza"></p>
+
+            </div>
+
+            <div class="section">
+                <h2>Part 2: Free Response</h2>
+                <hr>
+
+                <!-- TODO: Add free response question here -->
+
+            </div>
+
+        </div>
+    </body>
+</html>
